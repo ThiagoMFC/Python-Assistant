@@ -30,10 +30,8 @@ class MyFrame(wx.Frame):
             # wolframalpha appID
             app_id = ""
             client = wolframalpha.Client(app_id)
-
             result = client.query(user_input)
             answer = next(result.results).text
-
             print(answer)
             speech = gTTS(text=answer, lang='en', slow=False)
             speech.save('answer.mp3')
@@ -44,7 +42,6 @@ class MyFrame(wx.Frame):
             speech = gTTS(text=answer, lang='en', slow=False)
             speech.save('answer.mp3')
             os.system("start answer.mp3")
-
 
 
 
